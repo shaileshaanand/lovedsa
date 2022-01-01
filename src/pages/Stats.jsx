@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import StatCard from "../components/StatCard";
 
 function Stats() {
+  const username = localStorage.getItem("gfg_username");
   const problems = [
     {
       title: "Two Sum",
@@ -34,7 +35,7 @@ function Stats() {
   return (
     <div className="font-primary">
       <Navbar />
-      <div className="text-xl pt-3 px-3">Hi, Kiran</div>
+      <div className="text-xl pt-3 px-3">Hi, {username}</div>
       <StatCard
         title="Today's Goal"
         progress={60}

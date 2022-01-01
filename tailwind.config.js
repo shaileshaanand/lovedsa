@@ -5,6 +5,7 @@ module.exports = {
       colors: {
         primary: "#39C4FF",
         secondary: "#1F0318",
+        secondarydark: "#13020E",
         paper: "#F9F9F9",
         tertiary: "#14213d",
         tertiarylight: "#BA1290",
