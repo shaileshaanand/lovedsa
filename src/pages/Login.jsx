@@ -8,11 +8,9 @@ function Login() {
 
   const onSuccess = (data) => {
     if (data.info) {
-      console.log("rf", data);
       localStorage.setItem("gfg_username", data.info.username);
       window.location.reload();
     } else {
-      console.log("Invalid username");
       toastContent.current.innerHTML = `${username} is not a valid username`;
       toast.current.style.display = "flex";
       setTimeout(() => {
@@ -34,7 +32,6 @@ function Login() {
     e.preventDefault();
     refetch();
   };
-  console.log(data);
   return (
     <div className="font-primary relative">
       <Navbar />
@@ -65,11 +62,9 @@ function Login() {
             d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
           ></path>
         </svg>
-        {/* Username {username} does not exist, please try again. */}
         <span ref={toastContent}></span>
       </div>
       <div className="rounded-xl bg-white font-primary text-xl p-3 m-4">
-        {/* <p className="text-center">Login</p> */}
         <form onSubmit={handleSubmit} className="flex flex-col gap-3">
           <input
             type="text"
