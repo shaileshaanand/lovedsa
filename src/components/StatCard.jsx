@@ -18,7 +18,11 @@ function StatCard({ title, icon, problems }) {
           return (
             <div key={problem.link} className="flex items-center gap-2">
               {problem.done ? <Checked /> : <Unchecked />}{" "}
-              <a target="_blank" href={problem.link}>
+              <a
+                target="_blank"
+                href={problem.link}
+                className="hover:underline"
+              >
                 {problem.title}
               </a>
             </div>

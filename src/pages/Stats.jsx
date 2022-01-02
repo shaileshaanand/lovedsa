@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import StatCard from "../components/StatCard";
+import { useQuery } from "react-query";
 
 function Stats() {
   const username = localStorage.getItem("gfg_username");
