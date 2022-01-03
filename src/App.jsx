@@ -1,7 +1,6 @@
 import Navbar from "./components/Navbar";
 import Stats from "./pages/Stats";
 import Login from "./pages/Login";
-
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 
@@ -13,7 +12,7 @@ function App() {
   return (
     <QueryClientProvider client={new QueryClient()}>
       {isLoggedIn() ? <Stats /> : <Login />}
-      <ReactQueryDevtools initialIsOpen={false} />
+      {import.meta.env.DEV && <ReactQueryDevtools initialIsOpen={false} />}
     </QueryClientProvider>
   );
 }

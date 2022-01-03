@@ -1,6 +1,6 @@
 import React from "react";
 
-function StatCardHeader({ title, progress, icon }) {
+function StatCardHeader({ title, refetch, icon, isFetching, progress }) {
   return (
     <div className="flex justify-between">
       <div className="flex">
@@ -10,9 +10,10 @@ function StatCardHeader({ title, progress, icon }) {
       <div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
+          className={`h-5 w-5 ${isFetching ? "animate-spin" : ""}`}
           viewBox="0 0 20 20"
           fill="currentColor"
+          onClick={refetch}
         >
           <path
             fillRule="evenodd"
